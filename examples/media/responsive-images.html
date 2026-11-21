@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Learn responsive image markup using picture, source, srcset and sizes.">
+<title>Responsive Images in HTML</title>
+<style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:60rem;margin:2rem auto;padding:0 1rem}
+img{display:block;max-width:100%;height:auto}
+figure{margin:2rem 0}figcaption{color:#4b5563}
+</style>
+</head>
+<body>
+<main>
+<h1>Responsive images</h1>
+<p>Use <code>srcset</code> and <code>sizes</code> to let the browser choose an appropriate image candidate. Use <code>picture</code> when art direction or format selection is needed.</p>
+<figure>
+<picture>
+<source media="(min-width: 900px)" srcset="../../assets/images/placeholder.svg">
+<source media="(min-width: 480px)" srcset="../../assets/images/placeholder.svg">
+<img src="../../assets/images/placeholder.svg" alt="Placeholder illustration used to demonstrate responsive image markup" width="800" height="450" loading="lazy">
+</picture>
+<figcaption>A local placeholder keeps this example self-contained. Replace it with real optimised image files in your own project.</figcaption>
+</figure>
+<h2>Image authoring checklist</h2>
+<ul><li>Write useful alternative text for informative images.</li><li>Use empty alt text for decorative images.</li><li>Set intrinsic width and height to reduce layout shifts.</li><li>Use modern formats and appropriately sized files.</li><li>Do not lazy-load the page's main hero image by default.</li></ul>
+</main>
+</body>
+</html>
