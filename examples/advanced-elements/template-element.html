@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Learn how the HTML template element stores inert markup for later use.">
+<title>HTML Template Element</title>
+</head>
+<body>
+<main>
+<h1>The template element</h1>
+<p>Content inside a template is not rendered until a script clones and inserts it.</p>
+<button id="add-item" type="button">Add sample card</button>
+<ul id="items" aria-live="polite"></ul>
+<template id="item-template">
+<li><article><h2></h2><p></p></article></li>
+</template>
+</main>
+<script>
+const button=document.querySelector("#add-item");
+const list=document.querySelector("#items");
+const template=document.querySelector("#item-template");
+let count=0;
+button.addEventListener("click",()=>{
+  count+=1;
+  const fragment=template.content.cloneNode(true);
+  fragment.querySelector("h2").textContent="Sample item "+count;
+  fragment.querySelector("p").textContent="This card was cloned from a native HTML template.";
+  list.append(fragment);
+});
+</script>
+</body>
+</html>
