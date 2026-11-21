@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="An example article page using semantic HTML landmarks and elements.">
+<title>Semantic Article Layout</title>
+</head>
+<body>
+<header>
+<p><a href="../../index.html">Royal Web Structure Lab</a></p>
+<nav aria-label="Article navigation"><a href="#article">Skip to article</a> · <a href="#related">Related reading</a></nav>
+</header>
+<main id="article">
+<article>
+<header>
+<p>HTML fundamentals</p>
+<h1>Why semantic HTML matters</h1>
+<p>Published <time datetime="2026-11-21">21 November 2026</time></p>
+</header>
+<p>Semantic elements describe the purpose of content. They help browsers, assistive technologies and developers understand a page's structure.</p>
+<section aria-labelledby="clear-structure">
+<h2 id="clear-structure">Clear structure</h2>
+<p>Use headings in a logical order and choose elements according to their meaning, not their default appearance.</p>
+</section>
+<section aria-labelledby="meaningful-elements">
+<h2 id="meaningful-elements">Meaningful elements</h2>
+<p>Use <code>nav</code> for navigation, <code>main</code> for the page's main content, and <code>aside</code> for complementary content.</p>
+</section>
+<footer><p>End of example article.</p></footer>
+</article>
+<aside id="related" aria-labelledby="related-title"><h2 id="related-title">Related reading</h2><ul><li><a href="../../docs/ACCESSIBILITY.md">Accessibility guide</a></li><li><a href="../../docs/TAG_REFERENCE.md">HTML tag reference</a></li></ul></aside>
+</main>
+<footer><p>© 2026 Royal Web Structure Lab</p></footer>
+</body>
+</html>
