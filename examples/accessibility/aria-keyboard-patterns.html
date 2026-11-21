@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Accessible native controls, keyboard operation and ARIA guidance.">
+<title>Accessibility and Keyboard Patterns</title>
+</head>
+<body>
+<main>
+<h1>Accessibility and keyboard patterns</h1>
+<p>Prefer native HTML controls because browsers provide keyboard and assistive-technology behavior automatically.</p>
+<button type="button" id="announce">Announce a message</button>
+<p id="announcement" role="status" aria-live="polite">No message yet.</p>
+<details>
+<summary>Show accessibility checklist</summary>
+<ul>
+<li>Use headings in a logical hierarchy.</li>
+<li>Associate every form control with a visible label.</li>
+<li>Ensure all actions work with a keyboard.</li>
+<li>Keep focus visible and do not trap it unexpectedly.</li>
+<li>Use ARIA only when native HTML does not express the needed semantics.</li>
+</ul>
+</details>
+<script>
+"use strict";
+document.querySelector("#announce").addEventListener("click", () => {
+  document.querySelector("#announcement").textContent = "The button works with keyboard and pointer input.";
+});
+</script>
+</main>
+</body>
+</html>
