@@ -20,5 +20,7 @@ jobs:
         uses: actions/setup-python@v5
         with:
           python-version: "3.x"
-      - name: Run basic HTML structural checks
+      - name: Compile validation scripts
+        run: python -m py_compile scripts/check_html.py
+      - name: Validate all HTML examples and pages
         run: python scripts/check_html.py
