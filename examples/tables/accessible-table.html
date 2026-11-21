@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Learn accessible HTML tables with captions, header cells and scopes.">
+<title>Accessible HTML Data Table</title>
+<style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:55rem;margin:2rem auto;padding:0 1rem}
+.table-scroll{overflow-x:auto}table{border-collapse:collapse;width:100%;min-width:30rem}caption{text-align:left;font-weight:700;padding:.6rem 0}th,td{border:1px solid #9aa8ba;padding:.65rem;text-align:left}thead{background:#edf2f7}
+</style>
+</head>
+<body>
+<main>
+<h1>Accessible data table</h1>
+<p>Use tables for tabular data, not page layout. A caption gives the table a name and header cells identify row or column relationships.</p>
+<div class="table-scroll" role="region" aria-label="HTML topic progress table" tabindex="0">
+<table>
+<caption>Example learning progress</caption>
+<thead><tr><th scope="col">Topic</th><th scope="col">Level</th><th scope="col">Status</th></tr></thead>
+<tbody>
+<tr><th scope="row">Document structure</th><td>Beginner</td><td>Complete</td></tr>
+<tr><th scope="row">Forms</th><td>Intermediate</td><td>In progress</td></tr>
+<tr><th scope="row">Accessibility</th><td>Intermediate</td><td>Planned</td></tr>
+</tbody>
+</table>
+</div>
+</main>
+</body>
+</html>
