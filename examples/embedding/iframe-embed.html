@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Learn iframe embedding and sandbox restrictions.">
+<title>Iframe and Embedded Content</title>
+</head>
+<body>
+<main>
+<h1>Iframe and embedded content</h1>
+<p>An iframe creates a nested browsing context. Give it a descriptive title and a deliberate sandbox policy.</p>
+<iframe title="Local embedded example" srcdoc="<!doctype html><html lang='en'><body><h2>Embedded document</h2><p>This content is supplied with srcdoc.</p></body></html>" sandbox="" width="480" height="180" loading="lazy"></iframe>
+<h2>Security reminders</h2>
+<ul>
+<li>Use sandbox restrictions unless specific capabilities are required.</li>
+<li>Do not add allow-scripts or allow-same-origin casually.</li>
+<li>Use a restrictive Content Security Policy on production sites.</li>
+<li>Never embed an untrusted page without understanding its risks.</li>
+</ul>
+</main>
+</body>
+</html>
