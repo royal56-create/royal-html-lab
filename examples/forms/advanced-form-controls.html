@@ -20,9 +20,9 @@
 <input id="meeting" name="meeting" type="datetime-local"></p>
 <p><label for="site">Website</label>
 <input id="site" name="site" type="url" placeholder="https://example.com"></p>
-<button type="submit">Demo submit</button>
+<button type="button">Demo submit</button>
 </form><p id="form-status" role="status" aria-live="polite">Demo only: no information is sent or stored.</p>
 <p>This page demonstrates browser controls only. A real upload needs server-side validation, file-size limits, safe storage and malware scanning.</p>
 </main>
-<script>"use strict";document.querySelector("form").addEventListener("submit",event=>{event.preventDefault();document.querySelector("#form-status").textContent="Demo complete. No information was sent or stored.";});</script></body>
+<script>"use strict";const form=document.querySelector("form");const button=form.querySelector('button[type="button"]');button.addEventListener("click",()=>{if(form.reportValidity()){document.querySelector("#form-status").textContent="Validation passed. Demo only: no information was sent or stored.";}});</script></body>
 </html>
