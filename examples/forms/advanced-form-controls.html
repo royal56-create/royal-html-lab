@@ -21,8 +21,8 @@
 <p><label for="site">Website</label>
 <input id="site" name="site" type="url" placeholder="https://example.com"></p>
 <button type="submit">Demo submit</button>
-</form>
+</form><p id="form-status" role="status" aria-live="polite">Demo only: no information is sent or stored.</p>
 <p>This page demonstrates browser controls only. A real upload needs server-side validation, file-size limits, safe storage and malware scanning.</p>
 </main>
-</body>
+<script>"use strict";document.querySelector("form").addEventListener("submit",event=>{event.preventDefault();document.querySelector("#form-status").textContent="Demo complete. No information was sent or stored.";});</script></body>
 </html>
