@@ -25,5 +25,9 @@
 <button type="reset">Reset</button>
 </form><p id="form-status" role="status" aria-live="polite">Demo only: no information is sent or stored.</p>
 </main>
-<script>\n"use strict";\ndocument.querySelector("form").addEventListener("submit", event => { event.preventDefault(); document.querySelector("#form-status").textContent = "Validation passed. Demo only: no information was sent or stored."; });\n</script>\n</body>
+<script>
+"use strict";
+document.querySelector("form").addEventListener("submit", event => { event.preventDefault(); document.querySelector("#form-status").textContent = "Validation passed. Demo only: no information was sent or stored."; });
+</script>
+</body>
 </html>
