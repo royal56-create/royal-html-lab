@@ -1,6 +1,6 @@
 # Royal Web Structure Lab
 
-> **Educational / demo use only:** Review code before running it. Use only on files, devices, repositories, and networks you own or are explicitly authorized to access. Use at your own risk; no warranty is provided to the maximum extent permitted by applicable law. This notice does not waive non-waivable legal rights or obligations.\n
+> **Educational / demo use only:** Review code before running it. Use only on files, devices, repositories, and networks you own or are explicitly authorized to access. Use at your own risk; no warranty is provided to the maximum extent permitted by applicable law. This notice does not waive non-waivable legal rights or obligations.
 A practical, offline-first HTML5 learning and development laboratory. It includes a browsable multi-page demo, focused examples, reusable starter templates, accessibility and SEO guidance, and a lightweight validation script.
 
 ## Features
