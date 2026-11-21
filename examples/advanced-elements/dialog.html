@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Learn the native HTML dialog element and accessible modal patterns.">
+<title>HTML Dialog Element Example</title>
+<style>
+body{font:1rem/1.6 system-ui,sans-serif;max-width:48rem;margin:3rem auto;padding:0 1rem;color:#182235}
+button{font:inherit;padding:.65rem 1rem;cursor:pointer}dialog{max-width: min(32rem,calc(100% - 2rem));border:1px solid #9aa8ba;border-radius:1rem;padding:1.5rem}dialog::backdrop{background:#101827b8}
+</style>
+</head>
+<body>
+<main>
+<h1>The HTML dialog element</h1>
+<p><code>&lt;dialog&gt;</code> provides a native dialog. Use <code>showModal()</code> for modal behaviour and keep a clear way to close it.</p>
+<button id="open-dialog" type="button>Open information dialog</button>
+<dialog id="info-dialog" aria-labelledby="dialog-title">
+<h2 id="dialog-title">A native modal dialog</h2>
+<p>The browser manages the modal layer and makes the rest of the page inert while this dialog is open.</p>
+<form method="dialog"><button type="submit">Close dialog</button></form>
+</dialog>
+<p id="dialog-status" role="status" aria-live="polite"></p>
+</main>
+<script>
+const dialog=document.querySelector("#info-dialog");
+const opener=document.querySelector("#open-dialog");
+const status=document.querySelector("#dialog-status");
+opener.addEventListener("click",()=>dialog.showModal());
+dialog.addEventListener("close",()=>{status.textContent="Dialog closed.";opener.focus();});
+</script>
+</body>
+</html>
