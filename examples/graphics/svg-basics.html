@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Learn scalable vector graphics embedded in HTML.">
+<title>Inline SVG Basics</title>
+</head>
+<body>
+<main>
+<h1>Inline SVG Basics</h1>
+<p>SVG describes resolution-independent vector shapes directly in the document.</p>
+<svg viewBox="0 0 320 180" width="320" height="180" role="img" aria-labelledby="scene-title scene-desc">
+<title id="scene-title">Simple landscape</title>
+<desc id="scene-desc">A yellow sun above green hills and a blue sky.</desc>
+<rect width="320" height="180" fill="#bfdbfe"></rect>
+<circle cx="250" cy="45" r="25" fill="#facc15"></circle>
+<path d="M0 145 Q80 65 160 145 T320 130 V180 H0Z" fill="#16a34a"></path>
+</svg>
+<p>Use a meaningful accessible name for informative SVG. Decorative SVG can use aria-hidden="true".</p>
+</main>
+</body>
+</html>
