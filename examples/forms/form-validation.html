@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Practice native HTML constraint validation with required fields and input types.">
+<title>HTML Form Validation Example</title>
+</head>
+<body>
+<main>
+<h1>Native form validation</h1>
+<p>Submit with empty or invalid values to see browser validation. This demo does not send data.</p>
+<form action="#" method="get">
+<p><label for="username">Username (3–18 characters)</label><br>
+<input id="username" name="username" autocomplete="username" minlength="3" maxlength="18" required></p>
+<p><label for="email">Email address</label><br>
+<input id="email" name="email" type="email" autocomplete="email" required></p>
+<p><label for="website">Website (optional)</label><br>
+<input id="website" name="website" type="url" placeholder="https://example.com"></p>
+<p><label for="age">Age (18–100)</label><br>
+<input id="age" name="age" type="number" min="18" max="100" required></p>
+<p><label for="password">Password (at least 8 characters)</label><br>
+<input id="password" name="password" type="password" minlength="8" required autocomplete="new-password"></p>
+<button type="submit">Validate form</button>
+<button type="reset">Reset</button>
+</form>
+</main>
+</body>
+</html>
