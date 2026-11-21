@@ -21,13 +21,10 @@
 <input id="age" name="age" type="number" min="18" max="100" required></p>
 <p><label for="password">Password (at least 8 characters)</label><br>
 <input id="password" name="password" type="password" minlength="8" required autocomplete="new-password"></p>
-<button type="submit">Validate form</button>
+<button type="button">Validate form</button>
 <button type="reset">Reset</button>
 </form><p id="form-status" role="status" aria-live="polite">Demo only: no information is sent or stored.</p>
 </main>
-<script>
-"use strict";
-document.querySelector("form").addEventListener("submit", event => { event.preventDefault(); document.querySelector("#form-status").textContent = "Validation passed. Demo only: no information was sent or stored."; });
-</script>
+<script>"use strict";const form=document.querySelector("form");const button=form.querySelector('button[type="button"]');button.addEventListener("click",()=>{if(form.reportValidity()){document.querySelector("#form-status").textContent="Validation passed. Demo only: no information was sent or stored.";}});</script>
 </body>
 </html>
