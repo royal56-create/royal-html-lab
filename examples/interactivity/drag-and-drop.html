@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="A basic HTML drag and drop example with keyboard alternatives.">
+<title>HTML Drag and Drop</title>
+<style>
+.drop-zone { min-height: 7rem; padding: 1rem; border: 2px dashed currentColor; margin-block: 1rem; }
+[draggable="true"] { display: inline-block; padding: .75rem; border: 1px solid currentColor; cursor: grab; }
+</style>
+</head>
+<body>
+<main>
+<h1>HTML Drag and Drop</h1>
+<p>Drag the card into the drop zone, or use the button for a keyboard-friendly alternative.</p>
+<p id="drag-card" draggable="true" tabindex="0">Move this learning card</p>
+<button id="move-button" type="button">Move card to drop zone</button>
+<section id="drop-zone" class="drop-zone" aria-label="Drop zone" aria-live="polite">Drop zone</section>
+<p id="drag-status" role="status" aria-live="polite">Card is ready.</p>
+</main>
+<script>
+"use strict";
+const card = document.querySelector("#drag-card");
+const zone = document.querySelector("#drop-zone");
+const status = document.querySelector("#drag-status");
+card.addEventListener("dragstart", event => {
+  event.dataTransfer.setData("text/plain", "learning-card");
+  event.dataTransfer.effectAllowed = "move";
+});
+zone.addEventListener("dragover", event => {
+  event.preventDefault();
+  event.dataTransfer.dropEffect = "move";
+});
+zone.addEventListener("drop", event => {
+  event.preventDefault();
+  if (event.dataTransfer.getData("text/plain") === "learning-card") moveCard();
+});
+document.querySelector("#move-button").addEventListener("click", moveCard);
+function moveCard() {
+  zone.append(card);
+  status.textContent = "Card moved into the drop zone.";
+}
+</script>
+</body>
+</html>
