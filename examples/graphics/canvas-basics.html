@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Learn the HTML canvas element and its 2D drawing context.">
+<title>HTML Canvas Basics</title>
+</head>
+<body>
+<main>
+<h1>HTML Canvas Basics</h1>
+<p>Canvas provides a scriptable bitmap drawing surface. The fallback text helps when canvas is unavailable.</p>
+<canvas id="drawing" width="480" height="240" role="img" aria-label="A blue rectangle, orange circle and green line">
+Your browser does not support canvas. The drawing contains a rectangle, circle and line.
+</canvas>
+<p><button id="redraw" type="button">Draw again</button></p>
+<p id="canvas-status" role="status" aria-live="polite">Drawing ready.</p>
+</main>
+<script>
+"use strict";
+const canvas = document.querySelector("#drawing");
+const status = document.querySelector("#canvas-status");
+function draw() {
+  const context = canvas.getContext("2d");
+  if (!context) { status.textContent = "Canvas 2D is not supported."; return; }
+  context.clearRect(0, 0, canvas.width, canvas.height);
+  context.fillStyle = "#2563eb";
+  context.fillRect(24, 24, 150, 90);
+  context.beginPath();
+  context.arc(270, 70, 45, 0, Math.PI * 2);
+  context.fillStyle = "#f97316";
+  context.fill();
+  context.beginPath();
+  context.moveTo(24, 180);
+  context.lineTo(430, 180);
+  context.strokeStyle = "#15803d";
+  context.lineWidth = 6;
+  context.stroke();
+  status.textContent = "Canvas drawing rendered.";
+}
+document.querySelector("#redraw").addEventListener("click", draw);
+draw();
+</script>
+</body>
+</html>
