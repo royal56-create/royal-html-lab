@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Safer HTML patterns for links, embedded content and user input.">
+<title>Safer HTML Patterns</title>
+</head>
+<body>
+<main>
+<h1>Safer HTML patterns</h1>
+<h2>External links</h2>
+<p><a href="https://example.com/" target="_blank" rel="noopener noreferrer">Open example in a new tab</a></p>
+<h2>Untrusted text</h2>
+<label for="user-text">Enter text (shown as text, not HTML)</label>
+<input id="user-text" type="text">
+<button id="show-text" type="button">Display safely</button>
+<p id="safe-output" aria-live="polite"></p>
+<h2>Production checklist</h2>
+<ul>
+<li>Escape or safely encode untrusted data for its output context.</li>
+<li>Do not insert untrusted strings with innerHTML; use textContent for plain text.</li>
+<li>Validate data on the server; browser validation is not a security boundary.</li>
+<li>Configure HTTPS, Content Security Policy and appropriate security headers on the server.</li>
+<li>Sandbox third-party frames and grant only required permissions.</li>
+</ul>
+</main>
+<script>
+"use strict";
+document.querySelector("#show-text").addEventListener("click", () => {
+  document.querySelector("#safe-output").textContent = document.querySelector("#user-text").value;
+});
+</script>
+</body>
+</html>
