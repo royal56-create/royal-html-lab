@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Learn the difference between HTML progress and meter elements.">
+<title>Progress and Meter Elements</title>
+</head>
+<body>
+<main>
+<h1>Progress and meter</h1>
+<section aria-labelledby="progress-title">
+<h2 id="progress-title">Task progress</h2>
+<label for="upload-progress">Upload progress</label>
+<progress id="upload-progress" value="65" max="100">65%</progress>
+<p>The progress element shows completion of a task. Omit value for an indeterminate task.</p>
+</section>
+<section aria-labelledby="meter-title">
+<h2 id="meter-title">A measurement within a known range</h2>
+<label for="storage-meter">Storage used</label>
+<meter id="storage-meter" min="0" max="100" low="40" high="80" optimum="20" value="58">58%</meter>
+<p>The meter element represents a scalar measurement within a known range, not task progress.</p>
+</section>
+</main>
+</body>
+</html>
