@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Examples of advanced native HTML form controls.">
+<title>Advanced HTML Form Controls</title>
+</head>
+<body>
+<main>
+<h1>Advanced HTML Form Controls</h1>
+<form>
+<p><label for="avatar">Choose an image file</label>
+<input id="avatar" name="avatar" type="file" accept="image/png,image/jpeg"></p>
+<p><label for="color">Choose a color</label>
+<input id="color" name="color" type="color" value="#2563eb"></p>
+<p><label for="volume">Volume</label>
+<input id="volume" name="volume" type="range" min="0" max="100" value="40"></p>
+<p><label for="meeting">Meeting date and time</label>
+<input id="meeting" name="meeting" type="datetime-local"></p>
+<p><label for="site">Website</label>
+<input id="site" name="site" type="url" placeholder="https://example.com"></p>
+<button type="submit">Demo submit</button>
+</form>
+<p>This page demonstrates browser controls only. A real upload needs server-side validation, file-size limits, safe storage and malware scanning.</p>
+</main>
+</body>
+</html>
